@@ -1,11 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación del Estado de Ánimo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .bg-azul-oscuro {
+      background-color: #0d1b2a;
+    }
+    .text-azul {
+      color: #0d1b2a;
+    }
+    .text-gris {
+      color: #6c757d;
+    }
+    .card-pregunta {
+      background-color: #e9ecef;
+      border: none;
+      border-radius: 1rem;
+    }
+    .pregunta-imagen {
+      height: 200px;
+      background-color: #dee2e6;
+      border-radius: 1rem 1rem 0 0;
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="container py-5">
+    <div class="text-center mb-4">
+      <h1 class="text-azul">Evaluación de Estado de Ánimo</h1>
+      <p class="text-gris">Responde a las siguientes preguntas relacionadas con tu experiencia académica y personal como estudiante. Cada respuesta nos ayuda a entender mejor tu estado emocional actual.</p>
+    </div>
+
+    <div id="test-container" class="d-flex justify-content-center">
+      <div class="card card-pregunta w-100 p-4" style="max-width: 600px;">
+        <div class="pregunta-imagen mb-3 d-flex align-items-center justify-content-center">
+          <span class="text-muted">[Espacio para imagen relacionada]</span>
+        </div>
+        <h5 id="pregunta-texto" class="text-azul"></h5>
+
+        <select id="respuesta-select" class="form-select my-4">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="1">Nada en absoluto</option>
+          <option value="2">Poco</option>
+          <option value="3">Neutral</option>
+          <option value="4">Bastante</option>
+          <option value="5">Mucho</option>
+        </select>
+
+        <div class="d-flex justify-content-between">
+          <button id="btn-anterior" class="btn btn-secondary" disabled>Anterior</button>
+          <button id="btn-siguiente" class="btn btn-primary">Siguiente</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="resultado" class="mt-5"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
