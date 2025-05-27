@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    {% if not user_name %}
+    <div class="text-center mb-4">
+        <h1 class="text-azul">Evaluación de Estado de Ánimo</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Comenzar Test</button>
+        </form>
+    </div>
+    {% else %}
+    <div id="test-container" class="d-flex justify-content-center">
+        <!-- Tu código JavaScript del test aquí -->
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
